@@ -42,12 +42,30 @@ Edit your Claude Desktop config file:
 **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 
+**Windows example:**
 ```json
 {
   "mcpServers": {
     "exisone": {
       "command": "node",
-      "args": ["/path/to/exisone-mcp/dist/index.js"],
+      "args": ["C:\\Users\\YOURNAME\\exisone-mcp\\dist\\index.js"],
+      "env": {
+        "EXISONE_API_URL": "https://www.exisone.com",
+        "EXISONE_ACCESS_TOKEN": "exo_at_YOUR_PUBLIC_ID_YOUR_SECRET",
+        "EXISONE_TENANT_ID": "1"
+      }
+    }
+  }
+}
+```
+
+**macOS/Linux example:**
+```json
+{
+  "mcpServers": {
+    "exisone": {
+      "command": "node",
+      "args": ["/Users/yourname/exisone-mcp/dist/index.js"],
       "env": {
         "EXISONE_API_URL": "https://www.exisone.com",
         "EXISONE_ACCESS_TOKEN": "exo_at_YOUR_PUBLIC_ID_YOUR_SECRET",
@@ -59,7 +77,7 @@ Edit your Claude Desktop config file:
 ```
 
 Replace:
-- `/path/to/exisone-mcp` with the actual path where you cloned the repo
+- The path with the actual path where you cloned the repo (use `\\` for Windows, `/` for macOS/Linux)
 - `EXISONE_ACCESS_TOKEN` with your actual token
 - `EXISONE_TENANT_ID` with your tenant ID (visible in dashboard settings)
 
