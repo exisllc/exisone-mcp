@@ -65,7 +65,12 @@ Replace:
 
 ### 4. Restart Claude Desktop
 
-Close and reopen Claude Desktop. The ExisOne tools should now be available.
+**Important:** You must **fully quit** Claude Desktop - closing the window is not enough as it continues running in the background.
+
+- **Windows:** Right-click the Claude icon in the system tray → Quit, or use Task Manager to end the "Claude" process
+- **macOS:** Right-click the dock icon → Quit, or use Cmd+Q
+
+Reopen Claude Desktop and go to **Settings → Developer** to verify the ExisOne server appears in the list.
 
 ## Available Tools
 
@@ -108,12 +113,21 @@ Close and reopen Claude Desktop. The ExisOne tools should now be available.
 
 ## Troubleshooting
 
+### Config changes not taking effect (Most Common Issue!)
+
+Claude Desktop runs in the background even after closing the window. You must fully quit it:
+
+- **Windows:** Open Task Manager (Ctrl+Shift+Esc), find "Claude" and click "End Task"
+- **Alternative:** Right-click the Claude icon in the system tray (bottom-right corner) → Quit
+- Then reopen Claude Desktop
+
 ### Claude doesn't show ExisOne tools
 
-1. Verify your config file path is correct for your OS
-2. Check that the path to `dist/index.js` is absolute and correct
-3. Restart Claude Desktop completely after config changes
-4. Check Claude Desktop logs for error messages
+1. Go to **Settings → Developer** to check if the server is listed
+2. Verify your config file path is correct for your OS
+3. Check that the path to `dist/index.js` is absolute and correct
+4. Make sure Claude Desktop is fully quit (not running in background) before restarting
+5. Check Claude Desktop logs for error messages
 
 ### "EXISONE_API_URL environment variable is required"
 
